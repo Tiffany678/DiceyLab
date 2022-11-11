@@ -21,7 +21,6 @@ public class Dice {
         int sum =0;
         Random r = new Random();
 
-
         for(int i=0; i<countOfDice; i++){
 
             sum+=r.nextInt(6)+1;

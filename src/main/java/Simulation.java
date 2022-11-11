@@ -19,7 +19,7 @@ public class Simulation {
     System.out.println("Simulation of " +b.getNum()+ " dice tossed for "+numOfToss+ " times.");
     System.out.println("***");
     for(int i=0; i<b.getSize(); i++){
-        System.out.println("\t"+(i+b.getNum())+" : \t"+b.getBin(i+b.getNum())+" : "+String.format("%.2f",(double)b.getBin(i+b.getNum())/numOfToss));
+        System.out.println("\t"+(i+b.getNum())+" : \t"+b.getBin(i+b.getNum())+" : \t"+String.format("%.2f",(double)b.getBin(i+b.getNum())/numOfToss));
     }
     }
     public static void main (String[] arg) {
