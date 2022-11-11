@@ -3,44 +3,29 @@ import java.util.Random;
 
 public class Dice {
 
-   // ArrayList<Integer> numsOfDice = new ArrayList<>();
+    private int countOfDice;
 
-    /*==>get the sum of the dices[dice1, dice2]: diceSum = dice1 +dice2
-     *==>get the total N times of the dicesSum:tossAndSum
-     *count the specific dicesSum accurency of the sum
-     */
-    int diceNum=0;
-    ArrayList<Integer> numsOfDice;
-    int tossAndSum=0;
-
-    public Dice(){
-        ArrayList<Integer> numsOfDice = new ArrayList<>(diceNum);
-    }
-    public int[] rollDice(int diceNum) {
-
-      for(int i=0; i<diceNum; i++) {
-          diceNum=(int)Math.random()*6+1;
-          this.diceNum = diceNum;
-      }
+    public void setCountOfDice(int countOfDice) {
+        this.countOfDice = countOfDice;
     }
 
-    public void setNumsOfDice(int numsOfDice) {
-        this.numsOfDice = numsOfDice;
+    public int getCountOfDice() {
+        return countOfDice;
     }
 
-    public int getNumberOfDices(){
-        return numsOfDice;
+    public Dice( int countOfDice){
+        this.countOfDice = countOfDice;
     }
-    //get the dice number
-//    public int getDiceNumber(){
-//
-//        return this.diceNum;
-//    }
-    //This method will return the sum of all the dices in the bin
-    public int getSum(){
+
+    public Integer tossAndSum(){
         int sum =0;
-        for(int i=0; i<this.numsOfDice; i++){
-            sum+=this.diceNum;
+        Random r = new Random();
+
+
+        for(int i=0; i<countOfDice; i++){
+
+            sum+=r.nextInt(6)+1;
+
         }
         return sum;
     }

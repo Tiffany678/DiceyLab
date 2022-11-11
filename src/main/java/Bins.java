@@ -7,27 +7,29 @@ import java.util.TreeMap;
 
 public class Bins {
 
-    // ArrayList<Integer> numsOfDice = new ArrayList<>();
+   // private Map<Integer, Integer> toss;
+    private int numOfToss;
+    private int[] arr;
+    private int num;
 
-    /*get the sum of the dices[dice1, dice2]: diceSum = dice1 +dice2
-     *get the total N times of the dicesSum: tossAndSum
-     * ==>create a TreeMap to store the tossAndSum: key= sum; value= currency;
-     */
-
-    public Bins (int low, int high){
-        Map<Integer,Integer> binResult = new TreeMap<>();
-        for(int i=low; i<=high; i++){
-            binResult.put(i,0);
+    public Bins(int num1, int num2){
+        num=num1;
+        arr = new int[num2-num1+1];
+        for(int i=0; i<num2-num1; i++){
+            arr[i]=0;
         }
-
+    }
+    public Integer getBin(int numbin){
+        return arr[numbin-num];
+    }
+    public void incrementBin(int numbin){
+        arr[numbin-num]++;
     }
 
-
-
-
-//    Bins results = new Bins(2, 12); // for bins from 2..12
-//    Integer numberOfTens = results.getBin(10); // returns the number of tens in the 10 bin
-//    results.incrementBin(10); // should increment bin # 10
-
-
+    public int getNum() {
+        return num;
+    }
+    public int getSize(){
+        return arr.length;
+    }
 }
